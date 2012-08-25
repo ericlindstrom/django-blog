@@ -1,0 +1,7 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ object.title }} :: {{ block.super }}{% endblock title %}
+
+{% block blog_content %}
+    <h1><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h1>
+{% endblock blog_content %}

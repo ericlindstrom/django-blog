@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load markup %}
+
+{% block blog_content %}
+    {% for object in object_list %}
+        {% if forloop.first %}
+        <div class="entry first">
+            {% include "blog/content/blogentry_detail.html" %}
+        </div>
+        {% else %}
+        <div class="entry">
+            <h1><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h1>
+        </div>
+        {% endif %}
+        
+    {% endfor %}
+{% endblock blog_content %}

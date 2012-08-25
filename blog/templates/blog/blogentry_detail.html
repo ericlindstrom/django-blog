@@ -1,0 +1,7 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ object.title }} :: {{ block.super }}{% endblock title %}
+
+{% block blog_content %}
+    {% include 'blog/content/blogentry_detail.html' %}
+{% endblock blog_content %}

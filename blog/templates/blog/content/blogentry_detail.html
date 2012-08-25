@@ -1,0 +1,7 @@
+{% load markup %}
+<h1><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h1>
+{{ object.body|markdown }}
+
+{% for image in object.blogimage_set.all %}
+    <img src="{{ image.image.url }}" />
+{% endfor %}
